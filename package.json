@@ -1,0 +1,23 @@
+{
+  "name": "virement_xls_to_xml",
+  "productName": "Xls2Xml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:osx": "electron-packager . --overwrite  --asar --platform=darwin --arch=x64 --prune=true --out=release-builds",
+    "build:win": "electron-packager . Xls2Xml --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Xls2Xml\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^2.0.8",
+    "read-excel-file": "^2.0.2",
+    "xmlbuilder": "^10.0.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^12.1.1"
+  }
+}
