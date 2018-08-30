@@ -7,6 +7,12 @@ body {
     text-align: center
 }
 
+a {
+    font-family: Helvetica, sans-serif;
+    font-size: 13px;
+    color: black;
+}
+
 #file {
     position: absolute;
     top: 20%;

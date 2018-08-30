@@ -37,6 +37,12 @@ ipcMain.on('log', function(ev, args) {
     console.log.apply(console, args)
 })
 
+ipcMain.on('download-sample', function(ev, args) { 
+    dialog.showSaveDialog(mainWindow, { defaultPath: 'sample.xlsx' }, function (fileToSave) {
+        if (fileToSave !== undefined)
+            fs.writeFileSync(fileToSave, fs.readFileSync(__dirname + '/../base.xlsx'), 'utf8');
+    })})
+
 ipcMain.on('convert', function(ev, filePath) {
     console.log(filePath)
     transform(filePath).then(function (xml) {

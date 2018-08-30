@@ -8,9 +8,15 @@ const log = function () {
 window.addEventListener('DOMContentLoaded', function () {
 
     let file,
+        sampleLink = document.querySelector('a'),
         button = document.querySelector('button'),
         fileDisplay = document.querySelector('#file'),
         pathDisplay = document.querySelector('#path')
+
+    sampleLink.addEventListener('click', function(ev) {
+        ipc.send('download-sample')
+        ev.preventDefault()
+    })
 
     button.addEventListener('click', function (ev) {
         if (!ev.target.disabled)
